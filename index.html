@@ -1,0 +1,40 @@
+<style>
+
+#container {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        background: lightpink;}
+
+    #animate {
+        position: absolute;
+        background-image: url(rab.png);
+        background-repeat: no-repeat;
+        background-size: 150px;
+        width: 200px;
+        height: 200px;}
+</style>
+
+<div id="container">
+    <div id="animate">
+    </div>
+</div>
+<button onclick="myMove()">click me</button>
+<script>
+    function myMove() {
+        var elem = document.getElementById("animate");
+        var pos = 0;
+        var id = setInterval(frame, 5);
+
+        function frame() {
+            if (pos == 200) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.top = 0 + "px";
+                elem.style.left = pos + "px";
+            }
+        }
+    }
+</script>
+   
